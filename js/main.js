@@ -18,7 +18,7 @@ var count_arrow = 3;
 		e.target.setAttribute("id", "active");
 		for(var i = 0; i < count_arrow; i++){ 
 			mass[i] = parseInt(2 - 0.5 + Math.random() * (3 - 1 + 1)); 
-			navigation.innerHTML = navigation.innerHTML + '<li><img src ="/game_move/img/arrow_'+ mass[i] +'.jpg"></li>'; 
+			navigation.innerHTML = navigation.innerHTML + '<li><img src ="../game/img/arrow_'+ mass[i] +'.jpg"></li>'; 
 		}
 		var start_time = setInterval(function() {
 			var time = document.getElementById("time").innerText;
@@ -162,9 +162,17 @@ function reset_game(){
 		all_li[i].classList.remove("fin");
 	}
 	document.getElementById("active").setAttribute("id", "");
-	if(document.getElementById("finish")){
-		document.getElementById("finish").setAttribute("id", ""); 
+
+	if(document.getElementsByClassName("finish")){
+		var finish_all = document.getElementsByClassName("finish");
+
+			for (var j = 0; j < finish_all.length; j++){
+				finish_all[j].setAttribute("class", "");
+			}
+
+		// document.getElementById("finish").setAttribute("class", ""); 
 	}	
+
 	document.getElementById("time").classList.remove("last3s");
 	// document.getElementById("time").innerHTML = 9;
 	setComplexity();
