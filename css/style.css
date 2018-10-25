@@ -146,7 +146,7 @@ section#screen_saver button{
 	border: 1px solid silver; 
 	margin-bottom: 2px; 
 } 
-.wrapper ul li#active{ 
+.wrapper ul li.active{ 
 	background-image: url("../img/people.jpg"); 
 	background-size: 30%; 
 	background-repeat: no-repeat; 
