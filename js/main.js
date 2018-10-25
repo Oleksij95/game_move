@@ -18,7 +18,7 @@ var count_arrow = 3;
 		e.target.setAttribute("id", "active");
 		for(var i = 0; i < count_arrow; i++){ 
 			mass[i] = parseInt(2 - 0.5 + Math.random() * (3 - 1 + 1)); 
-			navigation.innerHTML = navigation.innerHTML + '<li><img src ="../game/img/arrow_'+ mass[i] +'.jpg"></li>'; 
+			navigation.innerHTML = navigation.innerHTML + '<li><img src ="/game_move/img/arrow_'+ mass[i] +'.jpg"></li>'; 
 		}
 		var start_time = setInterval(function() {
 			var time = document.getElementById("time").innerText;
