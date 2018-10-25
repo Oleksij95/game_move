@@ -18,7 +18,7 @@ var count_arrow = 3;
 		e.target.setAttribute("id", "active");
 		for(var i = 0; i < count_arrow; i++){ 
 			mass[i] = parseInt(2 - 0.5 + Math.random() * (3 - 1 + 1)); 
-			navigation.innerHTML = navigation.innerHTML + '<li><img src ="/game_move/img/arrow_'+ mass[i] +'.jpg"></li>'; 
+			navigation.innerHTML = navigation.innerHTML + '<li><img src ="../game/img/arrow_'+ mass[i] +'.jpg"></li>'; 
 		}
 		var start_time = setInterval(function() {
 			var time = document.getElementById("time").innerText;
@@ -40,13 +40,29 @@ var count_arrow = 3;
 		document.getElementById("area").oncontextmenu = function(e){
 			e.preventDefault();
 			right_click += 1;
-			left_click = 0;
+			
 			if (right_click > 1) {
 				return;
 			}
-			e.target.setAttribute("id", "finish");
+
+			if (left_click < 1) {
+				return;
+			}
+
+			left_click = 0;
+
+			// e.target.setAttribute("id", "finish");
+			e.target.setAttribute("class", "finish");
 			clearInterval(start_time);
-			var finish = document.getElementById("finish")
+			// var finish = document.getElementById("finish");
+
+			var finish_all = document.getElementsByClassName("finish");
+
+			for (var fin = 0; fin < finish_all.length; fin++){
+				var finish = finish_all[fin];
+			}
+
+			console.log(finish);
 
 			function checkRezult(){
 				var start = document.getElementById("active");
