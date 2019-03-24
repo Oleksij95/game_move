@@ -156,6 +156,7 @@ var count_arrow = 3;
 function reset_game(){
 	 left_click = 0;
 	 right_click = 0;
+	 mass = [];
 	var all_li = document.getElementsByTagName("li");
 	var navigation = document.getElementById("list_nav");
 	for (var i = 0; i < all_li.length; i++) {
